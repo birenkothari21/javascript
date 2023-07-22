@@ -1,7 +1,7 @@
 // getting the input and output fields elements...
 const defaultResult = 0;
 let currentResult = defaultResult;
-let logEntreies = [];
+let logEntries = [];            //  creating the array to store the operation log data
 
 const userInput = document.getElementById("getNumber");
 const btnAdd = document.getElementById("btnAddition");
@@ -28,6 +28,20 @@ function generateEquation(operator, resultBeforeCalc, inputNumber) {
     equation.textContent = `Equation : ${resultBeforeCalc} ${operator} ${inputNumber}`;
 }
 
+// funciton to create the operation log / history and print in the console
+function operationLog (operationIdentifier, prevResult, number, output) {
+    const logEntry = {                                  //  creating object and store the info
+        operation : operationIdentifier,
+        prevResult : prevResult,
+        number : number,
+        output : output
+    };
+
+    logEntries.push(logEntry);              //  store log object into array
+    console.log(logEntry.operation);        //  Accessing object property / data
+    console.log(logEntries);
+}
+
 // simple arithmetic operation functions starts...
 function addition() {
     const num = getNumberInput();
@@ -36,14 +50,7 @@ function addition() {
     generateEquation('+',initialResult,num);
     result.textContent = `Result : ${currentResult}`;
 
-    const logEntry = {
-        operation: "ADD",
-        prevResult: initialResult,
-        number: num,
-        op: currentResult
-    };
-    logEntreies.push(logEntry);
-    console.log(logEntreies.operation);
+    operationLog('ADD', initialResult, num, currentResult);
 }
 
 function subtraction() {
@@ -53,15 +60,7 @@ function subtraction() {
     generateEquation('-',initialResult,num);
     result.textContent = `Result : ${currentResult}`;
 
-    const logEntry = {
-        operation: "SUB",
-        prevResult: initialResult,
-        number: num,
-        op: currentResult
-    };
-
-    logEntreies.push(logEntry);
-    console.log(logEntreies);
+    operationLog('SUBTRACT', initialResult, num, currentResult);
 }
 
 function multiplication() {
@@ -71,15 +70,7 @@ function multiplication() {
     generateEquation('*',initialResult,num);
     result.textContent = `Result : ${currentResult}`;
 
-    const logEntry = {
-        operation: "MUL",
-        prevResult: initialResult,
-        number: num,
-        op: currentResult
-    };
-
-    logEntreies.push(logEntry);
-    console.log(logEntreies);
+    operationLog('MULTIPLY', initialResult, num, currentResult);
 }
 
 function division() {
@@ -89,14 +80,6 @@ function division() {
     generateEquation('/',initialResult,num);
     result.textContent = `Result : ${currentResult}`;
 
-    const logEntry = {
-        operation: "DIV",
-        prevResult: initialResult,
-        number: num,
-        op: currentResult
-    };
-
-    logEntreies.push(logEntry);
-    console.log(logEntreies);
+    operationLog('DIVIDE', initialResult, num, currentResult);
 }
 // simple arithmetic operation function ends...
