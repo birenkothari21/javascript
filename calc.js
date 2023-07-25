@@ -45,6 +45,17 @@ function operationLog(operationIdentifier, prevResult, number, output) {
 
 function calculate(calculationType) {
     const num = getNumberInput();
+
+    if (
+        (calculationType !== 'ADD' &&
+            calculationType !== 'SUBTRACT' &&
+            calculationType !== 'MULTIPLY' &&
+            calculationType !== 'DIVIDE') ||
+        !num
+    ) {
+        return;
+    }
+
     const initialResult = currentResult;
     let mathOperator;
 
