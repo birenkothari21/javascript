@@ -52,11 +52,11 @@ for (const mark of marks) {
 }
 
 // scopes of vareiables declared using 'let', 'var' and 'const'
-{
-    var name = 'bk';
-    let age = 29;
-    console.log(name);
-    console.log(age);
-}
-console.log(name);
-console.log(age);
+// {
+//     var name = 'bk';
+//     let age = 29;
+//     console.log(name);
+//     console.log(age);
+// }
+// console.log(name);
+// console.log(age);
