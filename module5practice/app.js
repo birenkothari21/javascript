@@ -35,6 +35,6 @@ greet();
 
 'use strict';
 
-userName = 'User';
-
-// console.log(typeof foo);
+console.log(userName);
+var userName = 'User';
+console.log(userName);
