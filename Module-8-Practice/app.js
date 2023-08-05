@@ -175,26 +175,3 @@
 // console.log(persons);
 // console.log(copiedPersons1);
 // console.log(copiedPersons2);
-
-
-" 1) write a program following pattern.
-*                           
-* *  
-* * *  
-* * * *  
-* * * * *                                                                           DONE                                                          
-2) Find the sum of all elements of a given array? Ex. like arr = [1, 6, 17, 70, 85];    DONE
-3) convert one string into array and  get all 'e' from the string and append occurence number of e to it  like   srefere -> ['0e','1e','2e'  ] without using (for,while)  loop    BLOCK
-4)  Create an array of numbers (of your choice) and perform three array
-        operations on it: filter for numbers greater than 5, map every number to
-        an object which holds the number on some property (e.g. ""num"") and
-        reduce the array to a single number (the multiplication of all numbers).     BLOCK
-5)     Write a function (""findMax"") which executes some logic that finds the
-        largest number in a list of arguments. Pass the array from task 1 split
-        up into multiple arguments to that function.
-6)     Tweak the ""findMax"" function such that it finds both the minimum and
-        maximum and returns those as an array. Then use destructuring when
-        calling the function to store the two results in separate constants.
-7)     Create a list (and possibly some surrounding logic) where you ensure
-        that NO duplicate values can be added. Use whichever approach seems
-        appropriate to you.      DONE"
