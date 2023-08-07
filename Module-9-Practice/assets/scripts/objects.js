@@ -1,3 +1,5 @@
+// https://www.freecodecamp.org/news/the-this-keyword-in-javascript/
+
 const addMovieBtn = document.getElementById('add-movie-btn');
 const searchBtn = document.getElementById('search-btn');
 const movies = [];
@@ -20,7 +22,7 @@ const showMovies = (filterTerm = '') => {
 
     filteredMovies.forEach((movie) => {
         const movieItem = document.createElement('li');
-        let text = movie.info.title + ' - ';
+        let text = movie.fotmat() + ' - ';
 
         for (const key in movie.info) {
             if (key !== 'title') {
@@ -47,6 +49,9 @@ const addMovieBtnHandler = () => {
             [extraInfoKey]: extraInfoValue,
         },
         id: Math.random(),
+        fotmat: function () {
+            return this.info.title.toUpperCase();
+        },
     };
 
     movies.push(newMovie);
