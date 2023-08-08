@@ -112,23 +112,63 @@
 
 // console.log(sayPerson2Name());
 
-const list = [
-    {
-        name: 'A',
-        age: 20,
-        upp() {
-            return this.name.toUpperCase();
-        },
-    },
-    {
-        name: 'B',
-        age: 23,
-        upp() {
-            return this.name.toUpperCase(); // not working
-        },
-    },
-];
+// const list = [
+//     {
+//         name: 'A',
+//         age: 20,
+//         upp() {
+//             return this.name.toUpperCase();
+//         },
+//     },
+//     {
+//         name: 'B',
+//         age: 23,
+//         upp() {
+//             return this.name.toUpperCase(); // not working
+//         },
+//     },
+// ];
 
-list.forEach((item) => {
-    console.log(item.upp());
-});
+// list.forEach((item) => {
+//     console.log(item.upp());
+// });
+
+// const per = {
+//     name: 'A',
+//     age: 20,
+//     sayname: () => {
+//         console.log(this);
+//         console.log(this.name + this.age);
+//         return this.name;
+//     },
+//     // sayname: function () {
+//     //     console.log(this);
+//     //     console.log(this.name);
+//     //     return this.name;
+//     // },
+// };
+
+// const name = per.sayname.bind(per);
+
+// console.log('this using arrow function : ', per.sayname()); //  undefined
+
+// function Car(type, fuelType) {
+//     this.type = type;
+//     this.fuelType = fuelType;
+//     console.log(this.type, this.fuelType);
+// }
+
+// function setBrand(brand) {
+//     Car.call(this, 'convertible', 'petrol');
+//     this.brand = brand;
+//     console.log(`Car details = `, this);
+// }
+
+// function definePrice(price) {
+//     Car.call(this, 'convertible', 'diesel');
+//     this.price = price;
+//     console.log(`Car details = `, this);
+// }
+
+// const newBrand = new setBrand('Brand1');
+// const newCarPrice = new definePrice(100000);
