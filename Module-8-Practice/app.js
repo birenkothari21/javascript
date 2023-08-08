@@ -175,3 +175,17 @@
 // console.log(persons);
 // console.log(copiedPersons1);
 // console.log(copiedPersons2);
+
+// const personDate = [{ name: 'Max' }, { name: 'Alexa' }];
+// // const personDate = [10, 20, 30];
+
+// const max = personDate.find((person) => {
+//     return person.name === 'Max';
+// });
+
+// const maxIdx = personDate.findIndex((person) => {
+//     return person.name === 'Maxa.';
+// });
+
+// console.log(max, typeof max);
+// console.log(maxIdx, typeof maxIdx);
