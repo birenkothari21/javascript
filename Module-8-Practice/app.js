@@ -189,3 +189,11 @@
 
 // console.log(max, typeof max);
 // console.log(maxIdx, typeof maxIdx);
+
+// Sort()......
+
+// let testArr = [10, 30, 20, 20, 60, 5];
+// console.log(`Unsorted Array : ${testArr}`);
+
+// testArr = testArr.sort((a, b) => a - b);
+// console.log(`Sorted Array : ${testArr}`);
