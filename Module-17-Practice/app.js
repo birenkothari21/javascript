@@ -14,73 +14,126 @@
 
 // button.addEventListener("click", getLocation.bind(this, s, e));
 
-function orderPizza(type, name) {
-	// Query the pizzahub for a store
-	query(`/api/pizzahub/`, function (result, error) {
-		if (!error) {
-			let shopId = result.shopId;
+/* 
+	// setTimeout() inside a function... & still first it runs...
 
-			// Get the store and query pizzas
-			query(`/api/pizzahub/pizza/${shopid}`, function (result, error) {
-				if (!error) {
-					let pizzas = result.pizzas;
+	function timer() {
+		setTimeout(() => {
+			console.log("Time Out!");
+		}, 10000);
+	}
 
-					// Find if my pizza is availavle
-					let myPizza = pizzas.find((pizza) => {
-						return pizza.type === type && pizza.name === name;
-					});
+	
+	timer();
+	console.log("Collecting papers process starts...");
+ */
 
-					// Check for the free beverages
-					query(
-						`/api/pizzahub/beverages/${myPizza.id}`,
-						function (result, error) {
-							if (!error) {
-								let beverage = result.id;
+// Promse practicing...
+/* 
+	function greeting(msg) {
+		let promise = new Promise(function (resolve, reject) {
+			resolve(`Hi Everyone! ${msg}! How Are U All ?`);
+		});
 
-								// Prepare an order
-								query(
-									`/api/order`,
-									{
-										type: type,
-										name: name,
-										beverage: beverage,
-									},
-									function (result, error) {
-										if (!error) {
-											console.log(
-												`Your order of ${type} ${name} with ${beverage} has been placed`
-											);
-										} else {
-											console.log(
-												`Bad luck, No Pizza for you today!`
-											);
-										}
-									}
-								);
-							}
-						}
-					);
+		return promise;
+	}
+
+	function displayGreetMsg() {
+		const greetMsg = prompt("Enter Greeting Message : ").toString();
+		let getGreetMsg = greeting(greetMsg);
+
+		getGreetMsg.then((value) => {
+			console.log(value);
+		});
+	}
+
+	displayGreetMsg();
+ */
+/* 
+	function getPromise(URL) {
+		let promise = new Promise(function (resolve, reject) {
+			let req = new XMLHttpRequest();
+			req.open("GET", URL);
+			req.onload = function () {
+				if (req.status == 200) {
+					resolve(req.response);
+				} else {
+					reject("There is an Error!");
 				}
-			});
-		}
-	});
-}
+			};
+			req.send();
+		});
+		return promise;
+	} 
+*/
 
-// Call the orderPizza method
-orderPizza("veg", "margherita");
+const friends = [
+	{
+		id: 0,
+		name: "Sagar Mer",
+		age: 22,
+		address: "Dhoraji",
+	},
+	{
+		id: 1,
+		name: "Mihir Nirmal",
+		age: 23,
+		address: "Jam-Khambhalia",
+	},
+	{
+		id: 2,
+		name: "Naman Chauhan",
+		age: 22,
+		address: "Rajkot",
+	},
+	{
+		id: 3,
+		name: "Harsh Vadher",
+		age: 23,
+		address: "Rajkot",
+	},
+	{
+		id: 4,
+		name: "Bhavya Kamdar",
+		age: 24,
+		address: "Jamshedpur",
+	},
+	{
+		id: 5,
+		name: "Vivek Doshi",
+		age: 23,
+		address: "Savarkundla",
+	},
+];
 
-function getPromise(URL) {
-	let promise = new Promise(function (resolve, reject) {
-		let req = new XMLHttpRequest();
-		req.open("GET", URL);
-		req.onload = function () {
-			if (req.status == 200) {
-				resolve(req.response);
-			} else {
-				reject("There is an Error!");
+function getFriendId(friendId) {
+	let promise = new Promise((resolve, reject) => {
+		friends.forEach((friend) => {
+			if (friend.hasOwnProperty("id")) {
+				if (friend.id === friendId) {
+					resolve(friend);
+				}
 			}
-		};
-		req.send();
+		});
+
+		reject(`Friend is Not Exsist In FriendList Whose Id is ${friendId}`);
 	});
+
 	return promise;
 }
+
+function findFriendById(friendId) {
+	let promise = getFriendId(friendId);
+
+	promise
+		.then((value) => {
+			console.log(value);
+		})
+		.catch((error) => {
+			console.log(error);
+		});
+}
+
+const friendId = parseInt(prompt("Enter Friend Id : "));
+
+findFriendById(friendId);
