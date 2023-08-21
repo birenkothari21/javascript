@@ -15,17 +15,31 @@
 // button.addEventListener("click", getLocation.bind(this, s, e));
 
 /* 
-	// setTimeout() inside a function... & still first it runs...
+	// setTimeout() inside a function...
 
-	function timer() {
-		setTimeout(() => {
-			console.log("Time Out!");
-		}, 10000);
+	async function timer() {
+		try {
+			await new Promise((resolve, reject) => {
+				setTimeout(() => {
+					console.log("TTTTTT");
+					// reject("ERROR");
+					resolve();
+				}, 2000);
+			});
+
+			// promise;
+			console.log("Test --- 1");
+		} catch (error) {
+			console.log(error);
+		}
 	}
 
-	
-	timer();
-	console.log("Collecting papers process starts...");
+	async function temp() {
+		await timer();
+		console.log("Collecting papers process starts...");
+	}
+
+	temp();
  */
 
 // Promse practicing...
@@ -67,73 +81,73 @@
 	} 
 */
 
-const friends = [
-	{
-		id: 0,
-		name: "Sagar Mer",
-		age: 22,
-		address: "Dhoraji",
-	},
-	{
-		id: 1,
-		name: "Mihir Nirmal",
-		age: 23,
-		address: "Jam-Khambhalia",
-	},
-	{
-		id: 2,
-		name: "Naman Chauhan",
-		age: 22,
-		address: "Rajkot",
-	},
-	{
-		id: 3,
-		name: "Harsh Vadher",
-		age: 23,
-		address: "Rajkot",
-	},
-	{
-		id: 4,
-		name: "Bhavya Kamdar",
-		age: 24,
-		address: "Jamshedpur",
-	},
-	{
-		id: 5,
-		name: "Vivek Doshi",
-		age: 23,
-		address: "Savarkundla",
-	},
-];
+// const friends = [
+// 	{
+// 		id: 0,
+// 		name: "Sagar Mer",
+// 		age: 22,
+// 		address: "Dhoraji",
+// 	},
+// 	{
+// 		id: 1,
+// 		name: "Mihir Nirmal",
+// 		age: 23,
+// 		address: "Jam-Khambhalia",
+// 	},
+// 	{
+// 		id: 2,
+// 		name: "Naman Chauhan",
+// 		age: 22,
+// 		address: "Rajkot",
+// 	},
+// 	{
+// 		id: 3,
+// 		name: "Harsh Vadher",
+// 		age: 23,
+// 		address: "Rajkot",
+// 	},
+// 	{
+// 		id: 4,
+// 		name: "Bhavya Kamdar",
+// 		age: 24,
+// 		address: "Jamshedpur",
+// 	},
+// 	{
+// 		id: 5,
+// 		name: "Vivek Doshi",
+// 		age: 23,
+// 		address: "Savarkundla",
+// 	},
+// ];
 
-function getFriendId(friendId) {
-	let promise = new Promise((resolve, reject) => {
-		friends.forEach((friend) => {
-			if (friend.hasOwnProperty("id")) {
-				if (friend.id === friendId) {
-					resolve(friend);
-				}
-			}
-		});
+// function getFriendId(friendId) {
+// 	let promise = new Promise((resolve, reject) => {
+// 		friends.forEach((friend) => {
+// 			if (friend.hasOwnProperty("id")) {
+// 				if (friend.id === friendId) {
+// 					resolve(friend);
+// 				}
+// 			}
+// 		});
 
-		reject(`Friend is Not Exsist In FriendList Whose Id is ${friendId}`);
-	});
+// 		reject(`Friend is Not Exsist In FriendList Whose Id is ${friendId}`);
+// 	});
 
-	return promise;
-}
+// 	return promise;
+// }
 
-function findFriendById(friendId) {
-	let promise = getFriendId(friendId);
+// function findFriendById(friendId) {
+// 	let promise = getFriendId(friendId);
 
-	promise
-		.then((value) => {
-			console.log(value);
-		})
-		.catch((error) => {
-			console.log(error);
-		});
-}
+// 	promise
+// 		.then((value) => {
+// 			console.log(value);
+// 		})
+// 		.catch((error) => {
+// 			console.log(error);
+// 		});
+// }
 
-const friendId = parseInt(prompt("Enter Friend Id : "));
+// const friendId = parseInt(prompt("Enter Friend Id : "));
 
-findFriendById(friendId);
+// findFriendById(friendId);
